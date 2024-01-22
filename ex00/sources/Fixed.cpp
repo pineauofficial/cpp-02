@@ -6,11 +6,13 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:18:33 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/22 15:19:32 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/22 15:27:37 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::_bits = 8;
 
 Fixed::Fixed(void) : _fixed_nbr(0)
 {

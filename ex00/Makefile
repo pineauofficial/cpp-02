@@ -6,7 +6,7 @@
 #    By: pineau <pineau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 14:17:43 by nasamadi          #+#    #+#              #
-#    Updated: 2024/01/22 15:17:13 by pineau           ###   ########.fr        #
+#    Updated: 2024/01/22 17:26:03 by pineau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJ	= $(SRC:%.cpp=$(OBJ_DIR)%.o)
 DEP = $(OBJ:.o=.d)
 
 ### COMPILER ###
-CC			= clang++
+CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98 -MMD
 RM			= /bin/rm -rf
 
