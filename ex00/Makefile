@@ -6,12 +6,12 @@
 #    By: pineau <pineau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 14:17:43 by nasamadi          #+#    #+#              #
-#    Updated: 2024/01/20 15:16:22 by pineau           ###   ########.fr        #
+#    Updated: 2024/01/22 15:17:13 by pineau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ### PROGRAM ###
-NAME		= harl
+NAME		= fixed
 
 ### SOURCES ###
 SRC_DIR		= sources/
@@ -19,7 +19,7 @@ OBJ_DIR		= .objs/
 INCLUDES	= includes/
 
 SRC		=	main.cpp \
-			Harl.cpp \
+			Fixed.cpp \
 			
 			
 

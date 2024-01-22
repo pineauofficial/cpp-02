@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 13:18:53 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/22 13:30:45 by pineau           ###   ########.fr       */
+/*   Created: 2024/01/22 13:17:51 by pineau            #+#    #+#             */
+/*   Updated: 2024/01/22 15:11:27 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Fixed.hpp"
 
-#include <iostream>
-
-class Fixed
+int main(void)
 {
-	public:
-		Fixed(void);
-		~fixed(void);
-		Fixed(const Fixed &);
-		Fixed &operator=(const Fixed&);
-		
-	private:	
-};
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
 
-#endif
+	c = b;
+
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+
+	return (0);
+}
