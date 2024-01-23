@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:22:29 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/23 15:15:10 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/23 15:37:40 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ Fixed::Fixed(const int nbr)
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->_fixed_nbr = nbr << this->_bits;
-	
 }
 
 Fixed::Fixed(const float nbr)
@@ -50,9 +49,9 @@ Fixed::Fixed(const float nbr)
 	this->_fixed_nbr = (int)roundf(nbr * (1 << this->_bits));
 }
 
-/*************************/
-/*operateur d'affectation*/
-/*************************/
+/**************************/
+/*operateurs d'affectation*/
+/**************************/
 
 Fixed &Fixed::operator=(const Fixed &src)
 {
