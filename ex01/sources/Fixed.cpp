@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:22:29 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/22 17:41:40 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/23 15:15:10 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 const int Fixed::_bits = 8;
 
-/******************************************/
-/*constructeurs et operateur d'affectation*/
-/******************************************/
+/***************/
+/*constructeurs*/
+/***************/
 
 Fixed::Fixed(void) : _fixed_nbr(0)
 {
@@ -30,7 +30,7 @@ Fixed::~Fixed(void)
 	return ;
 }
 
-Fixed::Fixed(const Fixed &src)
+Fixed::Fixed(const Fixed & src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
@@ -40,14 +40,19 @@ Fixed::Fixed(const Fixed &src)
 Fixed::Fixed(const int nbr)
 {
 	std::cout << "Int constructor called" << std::endl;
-	//truc a faire	
+	this->_fixed_nbr = nbr << this->_bits;
+	
 }
 
 Fixed::Fixed(const float nbr)
 {
 	std::cout << "Float constructor called" << std::endl;
-	//truc a faire 
+	this->_fixed_nbr = (int)roundf(nbr * (1 << this->_bits));
 }
+
+/*************************/
+/*operateur d'affectation*/
+/*************************/
 
 Fixed &Fixed::operator=(const Fixed &src)
 {
@@ -57,6 +62,12 @@ Fixed &Fixed::operator=(const Fixed &src)
 		this->_fixed_nbr = src.getRawBits();
 	}
 	return (*this);
+}
+
+std::ostream & operator<<(std::ostream & ost, Fixed const &rhs)
+{
+	ost << rhs.toFloat();
+	return ost;
 }
 
 /*****************/
@@ -80,15 +91,10 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	//truc a faire
+	return ((float)this->_fixed_nbr / (1 << this->_bits));
 }
 
 int Fixed::toInt(void) const
 {
-	//truc a faire
-}
-
-Fixed &Fixed::operator<<(const Fixed &src)
-{
-	std::cout << "Assignation operator called" << std::endl;
+	return this->_fixed_nbr >> this->_bits;
 }
