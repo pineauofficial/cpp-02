@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:12:29 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/23 18:37:47 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/24 13:35:23 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,12 @@ std::ostream & operator<<(std::ostream & ost, Fixed const &rhs)
 	return ost;
 }
 
-bool	Fixed::operator>(const Fixed &rhs)
+bool	Fixed::operator>(const Fixed &rhs) const
 {
 	return (this->_fixed_nbr > rhs._fixed_nbr);
 }
 
-bool	Fixed::operator<(const Fixed &rhs)
+bool	Fixed::operator<(const Fixed &rhs) const
 {
 	return (this->_fixed_nbr < rhs._fixed_nbr);
 }
@@ -184,7 +184,7 @@ int Fixed::toInt(void) const
 	return this->_fixed_nbr >> this->_bits;
 }
 
-Fixed	&Fixed::min(Fixed &a, &b)
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
 {
 	if (a < b)
 		return (a);
@@ -198,7 +198,7 @@ Fixed const	&Fixed::min(Fixed const &a, Fixed const &b)
 	return (b);
 }
 
-Fixed	&Fixed::max(Fixed &a, &b)
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
 {
 	if (a > b)
 		return (a);
